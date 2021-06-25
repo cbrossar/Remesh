@@ -22,3 +22,8 @@
 3. `cd Remesh/remesh-gui`
 4. Install packages: `npm i`
 5. Run frontend: `ng serve`
+
+
+### Run Tests
+1. `cd Remesh/remesh-api`
+2. Run tests: `python manage.py test crud.tests`
