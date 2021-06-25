@@ -38,5 +38,5 @@
 
 ### Design Decisions
 - I decided that the Search Messages functionality should search within a conversation
-- I decided to ignore the create time inputs through the GUI. You can still input create times
-via the api
+- I decided to ignore the create time inputs for messages and thoughts through the GUI. 
+You can still input create times via the api, but in gui it defaults to now
