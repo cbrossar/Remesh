@@ -1,0 +1,13 @@
+<h2>Conversation: {{conversation_title}}</h2>
+<div class="b">
+    <button mat-raised-button color="primary" (click)="openDialog('NEW')">New Message</button>
+</div>
+<div class="b">
+    <button mat-raised-button color="primary" (click)="openDialog('SEARCH')">Search Messages</button>
+</div>
+<p>Click Message to view thoughts!</p>
+<mat-list role="list">
+    <mat-list-item *ngFor="let message of messages">
+        <button mat-raised-button (click)="goToMessage(message)">{{message.text}}</button>
+    </mat-list-item>
+</mat-list>

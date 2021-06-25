@@ -10,7 +10,7 @@ urlpatterns = [
     url(r'^api/conversations/search', conversation.conversation_search),
     url(r'^api/messages$', message.message_list),
     url(r'^api/messages/(?P<pk>[0-9]+)$', message.message_detail),
-    url(r'^api/messages/search/*', message.message_search),
+    url(r'^api/messages/search', message.message_search),
     url(r'^api/thoughts$', thought.thought_list),
     url(r'^api/thoughts/(?P<pk>[0-9]+)$', thought.thought_detail),
     path('', views.index, name='index'),

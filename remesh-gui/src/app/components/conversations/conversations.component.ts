@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ConversationsService } from '../../services/conversations.service'
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
+import { Router } from '@angular/router'
 
 export interface Conversation {
   title: string;
@@ -14,16 +15,30 @@ export interface Conversation {
 })
 export class ConversationsComponent implements OnInit {
 
-  constructor(private conversationsService: ConversationsService, public dialog: MatDialog) { }
+  constructor(private conversationsService: ConversationsService, public dialog: MatDialog, private router: Router) { }
 
   conversations: Conversation[] = [];
   label: string = '';
   title: string = '';
   question: string = '';
-  search_term: string = '';
+  search_text: string = '';
 
   ngOnInit(): void {
     this.getConversations();
+  }
+
+  getConversations() {
+    this.conversationsService.getConversations().subscribe( data => {
+      console.log(data);
+      this.conversations = data as any[];
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  goToConversation(conversation: any) {
+    console.log(conversation);
+    this.router.navigate(['conversations', conversation.id, 'messages']);
   }
 
   openDialog(type:string): void {
@@ -38,7 +53,7 @@ export class ConversationsComponent implements OnInit {
 
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '250px',
-      data: {label: this.label, text: this.title, question: this.question}
+      data: {label: this.label, text: '', question: this.question}
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -52,25 +67,16 @@ export class ConversationsComponent implements OnInit {
         }
         this.title = '';
       } else{
-        this.search_term = result;
-        if(this.search_term) {
-          this.conversationsService.searchConversations(this.search_term).subscribe( data => {
+        this.search_text = result;
+        if(this.search_text) {
+          this.conversationsService.searchConversations(this.search_text).subscribe( data => {
             console.log(data);
             this.conversations = data as any[];
           });
         }
-        this.title = '';
+        this.search_text = '';
       }
       
-    });
-  }
-
-  getConversations() {
-    this.conversationsService.getConversations().subscribe( data => {
-      console.log(data);
-      this.conversations = data as any[];
-    }, error => {
-      console.log(error);
     });
   }
 

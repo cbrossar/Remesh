@@ -16,6 +16,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DialogComponent } from './components/dialog/dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MessagesComponent } from './components/messages/messages.component';
 
 
 
@@ -25,7 +26,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     LoginComponent,
     HomeComponent,
     ConversationsComponent,
-    DialogComponent
+    DialogComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

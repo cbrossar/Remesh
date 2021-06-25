@@ -42,6 +42,7 @@ def message_detail(request, pk):
 def message_search(request):
 
     search_data = JSONParser().parse(request)
-    messages = Message.objects.filter(text__contains=search_data['search_text'])
+    messages = Message.objects.filter(conversation=search_data['conversation']).filter(
+        text__contains=search_data['search_text'])
     message_serializer = MessageSerializer(messages, many=True)
     return JsonResponse(message_serializer.data, safe=False)

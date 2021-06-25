@@ -14,11 +14,15 @@ export class ConversationsService {
     return this.http.get(environment.apiEndpointServer + '/conversations');
   }
 
+  getConversation(conversation_id: string) {
+    return this.http.get(environment.apiEndpointServer + '/conversations/' + conversation_id);
+  }
+
   newConversation(title: string) {
     return this.http.post(environment.apiEndpointServer + '/conversations', {'title': title});
   }
 
-  searchConversations(search_term: string) {
-    return this.http.post(environment.apiEndpointServer + '/conversations/search', {'search_term': search_term});
+  searchConversations(search_text: string) {
+    return this.http.post(environment.apiEndpointServer + '/conversations/search', {'search_text': search_text});
   }
 }
