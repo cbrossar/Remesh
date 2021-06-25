@@ -18,7 +18,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MessagesComponent } from './components/messages/messages.component';
 import { ThoughtsComponent } from './components/thoughts/thoughts.component';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 
 @NgModule({
@@ -43,9 +44,10 @@ import { ThoughtsComponent } from './components/thoughts/thoughts.component';
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-
   providers: [],
   bootstrap: [AppComponent]
 })

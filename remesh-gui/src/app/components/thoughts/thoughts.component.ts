@@ -57,7 +57,7 @@ export class ThoughtsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-        this.thought = result;
+        this.thought = result.text;
         if(this.thought) {
           this.thoughtService.newThought(this.message_id, this.thought).subscribe( data => {
             console.log(data);

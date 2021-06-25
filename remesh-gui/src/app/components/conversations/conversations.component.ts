@@ -52,22 +52,28 @@ export class ConversationsComponent implements OnInit {
     }
 
     const dialogRef = this.dialog.open(DialogComponent, {
-      width: '250px',
+      width: '300px',
       data: {label: this.label, text: '', question: this.question}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       if(type == 'NEW') {
-        this.title = result;
-        if(this.title) {
+        this.title = result.text;
+        if(this.title && result.date) {
+          console.log('herro');
+          this.conversationsService.newConversationDate(this.title, result.date).subscribe( data => {
+            this.getConversations();
+          });
+        }
+        else if(this.title) {
           this.conversationsService.newConversation(this.title).subscribe( data => {
             this.getConversations();
           });
         }
         this.title = '';
       } else{
-        this.search_text = result;
+        this.search_text = result.text;
         if(this.search_text) {
           this.conversationsService.searchConversations(this.search_text).subscribe( data => {
             console.log(data);

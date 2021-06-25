@@ -23,6 +23,11 @@ export class ConversationsService {
     return this.http.post(environment.apiEndpointServer + '/conversations', {'title': title});
   }
 
+  newConversationDate(title:string, date: any) {
+    console.log('hello');
+    return this.http.post(environment.apiEndpointServer + '/conversations', {'title': title, 'create_date': date});
+  }
+
   searchConversations(search_text: string) {
     return this.http.post(environment.apiEndpointServer + '/conversations/search', {'search_text': search_text});
   }

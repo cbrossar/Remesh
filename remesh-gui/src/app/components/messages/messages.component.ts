@@ -73,7 +73,7 @@ export class MessagesComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       if(type == 'NEW') {
-        this.message = result;
+        this.message = result.text;
         if(this.message) {
           this.messageService.newMessage(this.conversation_id, this.message).subscribe( data => {
             console.log(data)
@@ -82,7 +82,7 @@ export class MessagesComponent implements OnInit {
           this.message = '';
         }
       } else{
-        this.search_text = result;
+        this.search_text = result.text;
         if(this.search_text) {
           this.messageService.searchMessages(this.conversation_id, this.search_text).subscribe( data => {
             console.log(data);

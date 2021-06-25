@@ -14,8 +14,8 @@ def conversation_list(request):
         return JsonResponse(conversation_serializer.data, safe=False)
 
     elif request.method == 'POST':
-
         conversation_data = JSONParser().parse(request)
+        print(conversation_data)
         conversation_serializer = ConversationSerializer(data=conversation_data)
         if conversation_serializer.is_valid():
             conversation_serializer.save()
