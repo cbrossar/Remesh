@@ -15,7 +15,7 @@ def user_list(request):
         return JsonResponse(user_serializer.data, safe=False)
 
     elif request.method == 'POST':
-
+        print('in Post')
         user_data = JSONParser().parse(request)
         user_serializer = UserSerializer(data=user_data)
         if user_serializer.is_valid():

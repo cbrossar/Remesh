@@ -1,0 +1,13 @@
+<h2>Conversations</h2>
+<div class="b">
+    <button mat-raised-button color="primary">New Conversation</button>
+</div>
+<div class="b">
+    <button mat-raised-button color="primary">Search Conversations</button>
+</div>
+
+<mat-list role="list">
+    <mat-list-item *ngFor="let conversation of conversations" class="card">
+        <mat-card>{{conversation.title}}</mat-card>
+    </mat-list-item>
+</mat-list>

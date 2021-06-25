@@ -1,0 +1,8 @@
+<h2>Login</h2>
+<form [formGroup]="form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput placeholder="Ex. Cole" formControlName='username'>
+    </mat-form-field>
+  </form>
+  <button mat-raised-button color="primary" (click)="onGo()">Go</button>
