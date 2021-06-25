@@ -4,11 +4,11 @@
 
 1. Install Python 3.8^
 2. Clone Repository
-3. cd Remesh
+3. `cd Remesh`
 
 ### Run Backend
 
-1. cd remesh-api
+1. `cd remesh-api`
 2. Create python virtual environment: `python3 -m venv venv`
 3. Activate venv: `source venv/bin/activate`
 4. Install requirements: `pip install -r requirements.txt`

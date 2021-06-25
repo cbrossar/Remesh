@@ -10,6 +10,17 @@ class User(models.Model):
 
 
 class Conversation(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     create_date = models.DateTimeField('start date', auto_now_add=True)
+
+
+class Message(models.Model):
+    conversation = models.ForeignKey(Conversation, on_delete=models.CASCADE)
+    text = models.CharField(max_length=200)
+    create_date = models.DateTimeField('date and time sent', auto_now_add=True)
+
+
+class Thought(models.Model):
+    message = models.ForeignKey(Message, on_delete=models.CASCADE)
+    text = models.CharField(max_length=200)
+    create_date = models.DateTimeField('date and time sent', auto_now_add=True)
