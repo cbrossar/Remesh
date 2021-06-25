@@ -26,4 +26,14 @@
 
 ### Run Tests
 1. `cd Remesh/remesh-api`
-2. Run tests: `python manage.py test crud.tests`
+2. Run unit tests: `python manage.py test crud.tests`
+3. Run integration tests: 
+    - `python manage.py test crud.tester.test_conversations`
+    - `python manage.py test crud.tester.test_messages`
+    - `python manage.py test crud.tester.test_thoughts`
+
+
+### Design Decisions
+- I decided that the Search Messages functionality should search within a conversation
+- I decided to ignore the time inputs through the GUI. I thought it was unnecessary. 
+As seen in the backend tests, you can still create objects with custom create datetimes
