@@ -13,4 +13,12 @@ export class ConversationsService {
   getConversations() {
     return this.http.get(environment.apiEndpointServer + '/conversations');
   }
+
+  newConversation(title: string) {
+    return this.http.post(environment.apiEndpointServer + '/conversations', {'title': title});
+  }
+
+  searchConversations(search_term: string) {
+    return this.http.post(environment.apiEndpointServer + '/conversations/search', {'search_term': search_term});
+  }
 }

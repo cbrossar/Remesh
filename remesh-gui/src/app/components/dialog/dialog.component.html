@@ -1,1 +1,12 @@
-<p>dialog works!</p>
+<h1 mat-dialog-title>Hi </h1>
+<div mat-dialog-content>
+  <p>{{data.question}}</p>
+  <mat-form-field appearance="fill">
+    <mat-label>{{data.label}}</mat-label>
+    <input matInput [(ngModel)]="data.text">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.text" cdkFocusInitial>Ok</button>
+</div>
