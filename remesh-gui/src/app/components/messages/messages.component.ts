@@ -49,7 +49,9 @@ export class MessagesComponent implements OnInit {
   }
 
   goToMessage(message: any) {
-    console.log('go to message');
+    console.log('herro');
+    console.log(message);
+    this.router.navigate(['messages', message.id, 'thoughts']);
   }
 
 

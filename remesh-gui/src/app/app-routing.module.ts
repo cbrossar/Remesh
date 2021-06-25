@@ -4,6 +4,7 @@ import { ConversationsComponent } from './components/conversations/conversations
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { MessagesComponent } from './components/messages/messages.component';
+import { ThoughtsComponent } from './components/thoughts/thoughts.component';
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
@@ -11,7 +12,7 @@ const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "conversations", component: ConversationsComponent },
   { path: "conversations/:id/messages", component: MessagesComponent },
-
+  { path: "messages/:id/thoughts", component: ThoughtsComponent },
 ]
 
 @NgModule({

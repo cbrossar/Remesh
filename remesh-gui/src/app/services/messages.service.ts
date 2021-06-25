@@ -9,6 +9,10 @@ export class MessagesService {
 
   constructor(private http: HttpClient) { }
 
+  getMessage(message_id: string) {
+    return this.http.get(environment.apiEndpointServer + '/messages/' + message_id);
+  }
+
   newMessage(conversation_id: number, text: string) {
     return this.http.post(environment.apiEndpointServer + '/messages', {'conversation': conversation_id, 'text': text});
   }

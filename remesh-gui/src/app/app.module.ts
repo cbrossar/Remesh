@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DialogComponent } from './components/dialog/dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MessagesComponent } from './components/messages/messages.component';
+import { ThoughtsComponent } from './components/thoughts/thoughts.component';
 
 
 
@@ -27,7 +28,8 @@ import { MessagesComponent } from './components/messages/messages.component';
     HomeComponent,
     ConversationsComponent,
     DialogComponent,
-    MessagesComponent
+    MessagesComponent,
+    ThoughtsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,11 @@
+<h2>Message: {{message_text}}</h2>
+
+<div class="b">
+    <button mat-raised-button color="primary" (click)="openDialog()">New Thought</button>
+</div>
+
+<mat-list role="list">
+    <mat-list-item *ngFor="let thought of thoughts">
+        <button mat-raised-button>{{thought.text}}</button>
+    </mat-list-item>
+</mat-list>
