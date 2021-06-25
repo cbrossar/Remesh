@@ -36,3 +36,12 @@ def message_detail(request, pk):
     thought_serializer = ThoughtSerializer(thoughts, many=True)
     data['thoughts'] = thought_serializer.data
     return JsonResponse(data)
+
+
+@api_view(['POST'])
+def message_search(request):
+
+    search_data = JSONParser().parse(request)
+    messages = Message.objects.filter(text__contains=search_data['search_text'])
+    message_serializer = MessageSerializer(messages, many=True)
+    return JsonResponse(message_serializer.data, safe=False)
