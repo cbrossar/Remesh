@@ -35,5 +35,5 @@
 
 ### Design Decisions
 - I decided that the Search Messages functionality should search within a conversation
-- I decided to ignore the time inputs through the GUI. I thought it was unnecessary. 
-As seen in the backend tests, you can still create objects with custom create datetimes
+- I decided to ignore the create time inputs through the GUI. You can still input create times
+via the api
