@@ -2,20 +2,23 @@
 
 ## Setup local environment
 
-1. Clone Repository
-2. `cd Remesh`
+1. [Clone Repository](https://github.com/cbrossar/Remesh)
 
 ### Run Backend
 
 1. Install Python 3.8^
-2. `cd remesh-api`
+2. `cd Remesh/remesh-api`
 3. Create python virtual environment: `python3 -m venv venv`
 4. Activate venv: `source venv/bin/activate`
 5. Install requirements: `pip install -r requirements.txt`
 6. Make Migrations: `python manage.py makemigrations`
 7. Migrate: `python manage.py migrate`
-8. Run Server: `python manage.py runserver`
+8. Run backend: `python manage.py runserver`
    
 
 ### Run Frontend
-1. Install Angular
+1. [Install Node](https://nodejs.org/en/)
+2. Install Angular CLI `npm install -g @angular/cli` [help](https://medium.com/@angela.amarapala/ways-to-fix-bash-ng-command-not-found-7f329745795)
+3. `cd Remesh/remesh-gui`
+4. Install packages: `npm i`
+5. Run frontend: `ng serve`
