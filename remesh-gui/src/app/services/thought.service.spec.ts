@@ -1,16 +1,15 @@
 import { TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ThoughtService } from './thought.service';
 
 describe('ThoughtService', () => {
-  let service: ThoughtService;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(ThoughtService);
-  });
+  beforeEach(() => TestBed.configureTestingModule({
+    imports: [HttpClientTestingModule], 
+    providers: [ThoughtService]
+  }));
 
   it('should be created', () => {
+    const service: ThoughtService = TestBed.get(ThoughtService);
     expect(service).toBeTruthy();
   });
 });

@@ -1,3 +1,7 @@
-.b {
-    padding: 10px;
-  }
+.button-row {
+    width: 490px;
+}
+  
+.button-row .mat-button-base {
+    margin: 8px 8px 8px 8px;
+}

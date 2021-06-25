@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ConversationsComponent } from './conversations.component';
+import { ConversationsService } from 'src/app/services/conversations.service';
+import { DialogComponent } from '../dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+
 
 describe('ConversationsComponent', () => {
   let component: ConversationsComponent;
@@ -8,7 +12,9 @@ describe('ConversationsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConversationsComponent ]
+      imports: [HttpClientTestingModule, MatDialog], 
+      providers: [ConversationsService],
+      declarations: [ConversationsComponent, DialogComponent]
     })
     .compileComponents();
   });

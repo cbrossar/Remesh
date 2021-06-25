@@ -18,10 +18,11 @@
 
 ### Run Frontend
 1. [Install Node](https://nodejs.org/en/)
-2. Install Angular CLI `npm install -g @angular/cli` [help](https://medium.com/@angela.amarapala/ways-to-fix-bash-ng-command-not-found-7f329745795)
+2. Install Angular CLI: `npm install -g @angular/cli` [help](https://medium.com/@angela.amarapala/ways-to-fix-bash-ng-command-not-found-7f329745795)
 3. `cd Remesh/remesh-gui`
 4. Install packages: `npm i`
 5. Run frontend: `ng serve`
+6. Remesh app runs by default at: http://localhost:4200/
 
 
 ### Run Tests
@@ -31,6 +32,8 @@
     - `python manage.py test crud.tester.test_conversations`
     - `python manage.py test crud.tester.test_messages`
     - `python manage.py test crud.tester.test_thoughts`
+4. `cd Remesh/remesh-gui`
+5. Run frontend tests: `ng test`
 
 
 ### Design Decisions

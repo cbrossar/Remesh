@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MessagesService } from 'src/app/services/messages.service';
+import { ThoughtService } from 'src/app/services/thought.service';
 import { ThoughtsComponent } from './thoughts.component';
 
 describe('ThoughtsComponent', () => {
@@ -8,7 +10,9 @@ describe('ThoughtsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ThoughtsComponent ]
+      imports: [HttpClientTestingModule], 
+      providers: [MessagesService, ThoughtService],
+      declarations: [ThoughtsComponent]
     })
     .compileComponents();
   });
