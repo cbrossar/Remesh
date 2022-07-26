@@ -17,7 +17,7 @@
    
 
 ### Run Frontend
-1. [Install Node](https://nodejs.org/en/)
+1. [Install Node](https://nodejs.org/en/) (Need to use Node Version 16)
 2. Install Angular CLI: `npm install -g @angular/cli` [help](https://medium.com/@angela.amarapala/ways-to-fix-bash-ng-command-not-found-7f329745795)
 3. `cd Remesh/remesh-gui`
 4. Install packages: `npm i`
